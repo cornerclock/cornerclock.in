@@ -1,0 +1,66 @@
+/* POPUP MODAL BACKGROUND */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+    backdrop-filter: blur(5px); /* Premium blur effect */
+}
+
+/* MODAL CONTENT BOX */
+.modal-content {
+    background-color: #ffffff;
+    margin: 15% auto; 
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px; 
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+.close-btn:hover {
+    color: #333;
+}
+
+.modal-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* FORM INPUTS */
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-content input:focus {
+    border-color: #C48A37;
+}
