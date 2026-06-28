@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner Clock - Every Second Creates</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR SECTION -->
+    <header class="navbar">
+        <div class="logo">
+            <h2>CORNER CLOCK</h2>
+            <p>EVERY SECOND CREATES</p>
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="active">HOME</a>
+            <a href="#">SHOP</a>
+            <a href="#customize-section">CUSTOMIZE</a>
+            <a href="#footer-section">CONTACT</a>
+        </nav>
+        <div class="nav-icons">
+            <span>🔍</span>
+            <span>👤</span>
+            <span class="cart-icon">🛒 <sup id="cart-count">0</sup></span>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <h3>EVERY CLOCK IS</h3>
+            <h1>CUSTOMIZED</h1>
+            <hr class="title-divider">
+            <h2>DESIGNED BY YOU. CRAFTED BY US.</h2>
+            <p>At Corner Clock, we believe time deserves your personal touch. Customize every detail and create a clock that's uniquely yours.</p>
+            <div class="hero-buttons">
+                <!-- Trigger Popup Form for Customization -->
+                <button class="btn-primary" onclick="openCustomerForm('Custom Corner Clock')">CUSTOMIZE YOURS &rarr;</button>
+                <a href="#collection-section" class="btn-secondary">VIEW COLLECTION</a>
+            </div>
+            <div class="hero-badges">
+                <span>💎 PREMIUM QUALITY</span>
+                <span>✏️ CUSTOM MADE</span>
+                <span>🎁 PERFECT GIFT</span>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero-clock.png" alt="Premium Corner Clock">
+        </div>
+    </section>
+
+    <!-- FEATURES RIBBON -->
+    <section class="features-ribbon">
+        <div class="feature-item">
+            <span class="icon">📐</span>
+            <h4>100% CUSTOMIZABLE</h4>
+            <p>Design your clock your way.</p>
+        </div>
+        <div class="feature-item">
+            <span class="icon">🛡️</span>
+            <h4>PREMIUM MATERIALS</h4>
+            <p>Built with quality that lasts.</p>
+        </div>
+        <div class="feature-item">
+            <span class="icon">🕒</span>
+            <h4>TIMELESS DESIGN</h4>
+            <p>Minimal. Modern. Meaningful.</p>
+        </div>
+        <div class="feature-item">
+            <span class="icon">🚚</span>
+            <h4>WORLDWIDE SHIPPING</h4>
+            <p>Delivered to your doorstep.</p>
+        </div>
+    </section>
+
+    <!-- PRODUCT COLLECTION SECTION -->
+    <section class="collection" id="collection-section">
+        <span class="sub-heading">OUR COLLECTION</span>
+        <h2>PREMIUM CORNER TIMEPIECES</h2>
+        <p class="section-desc">Each clock is handcrafted with precision and designed to fit perfectly in your space.</p>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <span class="badge best-seller">BEST SELLER</span>
+                <img src="images/matte-black.png" alt="Matte Black">
+                <h3>MATTE BLACK</h3>
+                <p class="price">$129.00</p>
+                <button class="btn-cart" onclick="addToCart('Matte Black')">Add to Cart</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="images/walnut-wood.png" alt="Walnut Wood">
+                <h3>WALNUT WOOD</h3>
+                <p class="price">$139.00</p>
+                <button class="btn-cart" onclick="addToCart('Walnut Wood')">Add to Cart</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="images/concrete-grey.png" alt="Concrete Grey">
+                <h3>CONCRETE GREY</h3>
+                <p class="price">$129.00</p>
+                <button class="btn-cart" onclick="addToCart('Concrete Grey')">Add to Cart</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="images/matte-white.png" alt="Matte White">
+                <h3>MATTE WHITE</h3>
+                <p class="price">$129.00</p>
+                <button class="btn-cart" onclick="addToCart('Matte White')">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="view-all-container" style="margin-top: 30px;">
+            <!-- Trigger Popup Form for Checkout -->
+            <button class="btn-primary" onclick="openCustomerForm('Cart Checkout')">Checkout Cart via WhatsApp &rarr;</button>
+        </div>
+    </section>
+
+    <!-- CUSTOMER DETAILS POPUP FORM (MODAL) -->
+    <div id="customerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCustomerForm()">&times;</span>
+            <h3>Complete Your Order Details</h3>
+            <p>Please enter your contact information to proceed to WhatsApp.</p>
+            <form id="orderForm" onsubmit="handleFormSubmit(event)">
+                <input type="text" id="custName" placeholder="Your Full Name" required>
+                <input type="email" id="custEmail" placeholder="Your Email Address" required>
+                <input type="tel" id="custPhone" placeholder="Your Phone Number (e.g. +91...)" required>
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; margin-top: 15px;">Proceed to WhatsApp &rarr;</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MAIN FOOTER & CONTACT -->
+    <footer class="main-footer" id="footer-section" style="background-color: #f9f9f9; padding: 40px 7%; border-top: 1px solid #eee;">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+            <div class="footer-brand">
+                <h2>CORNER CLOCK</h2>
+                <p>EVERY SECOND CREATES</p>
+            </div>
+            <div class="footer-links">
+                <h4>QUICK LINKS</h4>
+                <p><a href="#" style="text-decoration: none; color: #555;">Home</a></p>
+                <p><a href="#collection-section" style="text-decoration: none; color: #555;">Shop</a></p>
+            </div>
+            <div class="footer-links">
+                <h4>CONTACT & HELP</h4>
+                <p style="color: #555; margin: 5px 0;">📧 cornerclock.in@gmail.com</p>
+                <p style="color: #555; margin: 5px 0;">📞 +91 8178169084</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px; font-size: 11px; color: #999;">
+            © 2026 Corner Clock. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Yahan apna asli WhatsApp number country code ke sath daalein (Bina '+' ke)
+        const whatsappNumber = "8178169084"; 
+        const whatsappNumber = "8178169084"; 
+
+        let cart = [];
+        let currentActionType = ""; // Track karega ki customer Customize kar raha hai ya Checkout
+
+        function addToCart(productName) {
+            cart.push(productName);
+            document.getElementById('cart-count').innerText = cart.length;
+            alert(productName + " has been added to your cart!");
+        }
+
+        // Open the Popup Form
+        function openCustomerForm(actionType) {
+            if (actionType === 'Cart Checkout' && cart.length === 0) {
+                alert("Your cart is empty! Add some clocks first.");
+                return;
+            }
+            currentActionType = actionType;
+            document.getElementById("customerModal").style.display = "block";
+        }
+
+        // Close the Popup Form
+        function closeCustomerForm() {
+            document.getElementById("customerModal").style.display = "none";
+        }
+
+        // Handle Form Submission and Send Data to WhatsApp
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Form reload hone se rokega
+
+            // Customer details pick karna
+            const name = document.getElementById("custName").value;
+            const email = document.getElementById("custEmail").value;
+            const phone = document.getElementById("custPhone").value;
+
+            let message = `*NEW ORDER/INQUIRY FROM WEBSITE*\n\n`;
+            message += `*Customer Details:*\n`;
+            message += `👤 Name: ${name}\n`;
+            message += `📧 Email: ${email}\n`;
+            message += `📞 Phone: ${phone}\n\n`;
+
+            if (currentActionType === 'Cart Checkout') {
+                message += `*Items Ordered:*\n`;
+                cart.forEach((item, index) => {
+                    message += `${index + 1}. ${item}\n`;
+                });
+            } else {
+                message += `*Request Type:* Want to customize a premium Corner Clock.\n`;
+            }
+
+            message += `\nPlease guide me with the next steps for payment and configuration.`;
+
+            // Reset form and close modal
+            document.getElementById("orderForm").reset();
+            closeCustomerForm();
+
+            // Open WhatsApp Link
+            let url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
